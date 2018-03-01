@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9542D5D6-D608-40F6-BAC6-95CD87EA3B1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiteDB</RootNamespace>
+    <AssemblyName>LiteDB</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET35;HAVE_APP_DOMAIN;HAVE_PROCESS;HAVE_ENVIRONMENT;HAVE_LOCK;HAVE_THREAD_ID;HAVE_ATTR_DEFINED;NET35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\Collections\Aggregate.cs" />
+    <Compile Include="Database\Collections\Delete.cs" />
+    <Compile Include="Database\Collections\Find.cs" />
+    <Compile Include="Database\Collections\Include.cs" />
+    <Compile Include="Database\Collections\Index.cs" />
+    <Compile Include="Database\Collections\Insert.cs" />
+    <Compile Include="Database\Collections\LiteCollection.cs" />
+    <Compile Include="Database\Collections\Update.cs" />
+    <Compile Include="Database\Collections\Upsert.cs" />
+    <Compile Include="Database\LiteDatabase.cs" />
+    <Compile Include="Document\BsonArray.cs" />
+    <Compile Include="Document\BsonDocument.cs" />
+    <Compile Include="Document\BsonType.cs" />
+    <Compile Include="Document\BsonValue.cs" />
+    <Compile Include="Document\Bson\BsonReader.cs" />
+    <Compile Include="Document\Bson\BsonSerializer.cs" />
+    <Compile Include="Document\Bson\BsonWriter.cs" />
+    <Compile Include="Document\Expression\BsonExpression.cs" />
+    <Compile Include="Document\Expression\Methods\Aggregate.cs" />
+    <Compile Include="Document\Expression\Methods\DataTypes.cs" />
+    <Compile Include="Document\Expression\Methods\Date.cs" />
+    <Compile Include="Document\Expression\Methods\Misc.cs" />
+    <Compile Include="Document\Expression\Methods\String.cs" />
+    <Compile Include="Document\Expression\Operators\ExpressionOperators.cs" />
+    <Compile Include="Document\Json\JsonReader.cs" />
+    <Compile Include="Document\Json\JsonSerializer.cs" />
+    <Compile Include="Document\Json\JsonTokenizer.cs" />
+    <Compile Include="Document\Json\JsonWriter.cs" />
+    <Compile Include="Document\ObjectId.cs" />
+    <Compile Include="Engine\Disks\FileDiskService.cs" />
+    <Compile Include="Engine\Disks\IDiskService.cs" />
+    <Compile Include="Engine\Disks\StreamDiskService.cs" />
+    <Compile Include="Engine\Disks\TempDiskService.cs" />
+    <Compile Include="Engine\Engine\Aggregate.cs" />
+    <Compile Include="Engine\Engine\Collection.cs" />
+    <Compile Include="Engine\Engine\Delete.cs" />
+    <Compile Include="Engine\Engine\Find.cs" />
+    <Compile Include="Engine\Engine\FindInclude.cs" />
+    <Compile Include="Engine\Engine\FindSort.cs" />
+    <Compile Include="Engine\Engine\Index.cs" />
+    <Compile Include="Engine\Engine\Info.cs" />
+    <Compile Include="Engine\Engine\Insert.cs" />
+    <Compile Include="Engine\Engine\Shell.cs" />
+    <Compile Include="Engine\Engine\Shrink.cs" />
+    <Compile Include="Engine\Engine\Update.cs" />
+    <Compile Include="Engine\Engine\Upsert.cs" />
+    <Compile Include="Engine\Engine\UserVersion.cs" />
+    <Compile Include="Engine\LiteEngine.cs" />
+    <Compile Include="Engine\Pages\BasePage.cs" />
+    <Compile Include="Engine\Pages\CollectionPage.cs" />
+    <Compile Include="Engine\Pages\DataPage.cs" />
+    <Compile Include="Engine\Pages\EmptyPage.cs" />
+    <Compile Include="Engine\Pages\ExtendPage.cs" />
+    <Compile Include="Engine\Pages\HeaderPage.cs" />
+    <Compile Include="Engine\Pages\IndexPage.cs" />
+    <Compile Include="Engine\Query\Query.cs" />
+    <Compile Include="Engine\Query\QueryAll.cs" />
+    <Compile Include="Engine\Query\QueryAnd.cs" />
+    <Compile Include="Engine\Query\QueryBetween.cs" />
+    <Compile Include="Engine\Query\QueryContains.cs" />
+    <Compile Include="Engine\Query\QueryCursor.cs" />
+    <Compile Include="Engine\Query\QueryEmpty.cs" />
+    <Compile Include="Engine\Query\QueryEquals.cs" />
+    <Compile Include="Engine\Query\QueryGreater.cs" />
+    <Compile Include="Engine\Query\QueryIn.cs" />
+    <Compile Include="Engine\Query\QueryLess.cs" />
+    <Compile Include="Engine\Query\QueryNot.cs" />
+    <Compile Include="Engine\Query\QueryNotEquals.cs" />
+    <Compile Include="Engine\Query\QueryOr.cs" />
+    <Compile Include="Engine\Query\QueryStartsWith.cs" />
+    <Compile Include="Engine\Query\QueryWhere.cs" />
+    <Compile Include="Engine\Services\CacheService.cs" />
+    <Compile Include="Engine\Services\CollectionService.cs" />
+    <Compile Include="Engine\Services\DataService.cs" />
+    <Compile Include="Engine\Services\IndexService.cs" />
+    <Compile Include="Engine\Services\LockService.cs" />
+    <Compile Include="Engine\Services\PageService.cs" />
+    <Compile Include="Engine\Services\TransactionService.cs" />
+    <Compile Include="Engine\Structures\CollectionIndex.cs" />
+    <Compile Include="Engine\Structures\DataBlock.cs" />
+    <Compile Include="Engine\Structures\IndexInfo.cs" />
+    <Compile Include="Engine\Structures\IndexNode.cs" />
+    <Compile Include="Engine\Structures\PageAddress.cs" />
+    <Compile Include="Linq\DeepCopy.Assign.cs" />
+    <Compile Include="Linq\Lucene.Net.cs" />
+    <Compile Include="Linq\ReaderWriterLockSlim.cs" />
+    <Compile Include="Linq\System.Collections.Generic\HashSet.cs" />
+    <Compile Include="Linq\System.Collections.Generic\ISet.cs" />
+    <Compile Include="Linq\System.Data.Linq\MonoTODOAttribute.cs" />
+    <Compile Include="Linq\System.Linq.Dynamic\System.Linq.Dynamic.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\BinaryExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ConditionalExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ConstantExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ElementInit.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\EmitContext.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\Expression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ExpressionPrinter.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ExpressionTransformer.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ExpressionType.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ExpressionVisitor.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\Expression_T.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\Extensions.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\InvocationExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\LambdaExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ListInitExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberAssignment.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberBinding.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberBindingType.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberInitExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberListBinding.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MemberMemberBinding.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\MethodCallExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\NewArrayExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\NewExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\ParameterExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\TypeBinaryExpression.cs" />
+    <Compile Include="Linq\System.Linq.Expressions\UnaryExpression.cs" />
+    <Compile Include="Linq\System.Linq.Ext.cs" />
+    <Compile Include="Linq\System.Linq\Check.cs" />
+    <Compile Include="Linq\System.Linq\Enumerable.cs" />
+    <Compile Include="Linq\System.Linq\Grouping.cs" />
+    <Compile Include="Linq\System.Linq\IGrouping.cs" />
+    <Compile Include="Linq\System.Linq\ILookup_T.cs" />
+    <Compile Include="Linq\System.Linq\IOrderedEnumerable_T.cs" />
+    <Compile Include="Linq\System.Linq\IOrderedQueryable.cs" />
+    <Compile Include="Linq\System.Linq\IOrderedQueryable_T.cs" />
+    <Compile Include="Linq\System.Linq\IQueryable.cs" />
+    <Compile Include="Linq\System.Linq\IQueryable_T.cs" />
+    <Compile Include="Linq\System.Linq\IQueryProvider.cs" />
+    <Compile Include="Linq\System.Linq\Lookup.cs" />
+    <Compile Include="Linq\System.Linq\OrderedEnumerable.cs" />
+    <Compile Include="Linq\System.Linq\OrderedSequence.cs" />
+    <Compile Include="Linq\System.Linq\Queryable.cs" />
+    <Compile Include="Linq\System.Linq\QueryableEnumerable.cs" />
+    <Compile Include="Linq\System.Linq\QueryableTransformer.cs" />
+    <Compile Include="Linq\System.Linq\QuickSort.cs" />
+    <Compile Include="Linq\System.Linq\SortContext.cs" />
+    <Compile Include="Linq\System.Linq\SortDirection.cs" />
+    <Compile Include="Linq\System.Linq\SortSequenceContext.cs" />
+    <Compile Include="Linq\System.Runtime.CompilerServices\DynamicAttribute.cs" />
+    <Compile Include="Linq\System.Runtime.CompilerServices\ExecutionScope.cs" />
+    <Compile Include="Linq\System.Runtime.CompilerServices\ExtensionAttribute.cs" />
+    <Compile Include="Linq\System.Runtime.CompilerServices\IStrongBox.cs" />
+    <Compile Include="Linq\System.Runtime.CompilerServices\StrongBox_T.cs" />
+    <Compile Include="Linq\System\Action.cs" />
+    <Compile Include="Linq\System\Func.cs" />
+    <Compile Include="Linq\Tuple\IStructuralComparable.cs" />
+    <Compile Include="Linq\Tuple\IStructuralEquatable.cs" />
+    <Compile Include="Linq\Tuple\Tuple.cs" />
+    <Compile Include="Mapper\Attributes\BsonFieldAttribute.cs" />
+    <Compile Include="Mapper\Attributes\BsonIdAttribute.cs" />
+    <Compile Include="Mapper\Attributes\BsonIgnoreAttribute.cs" />
+    <Compile Include="Mapper\Attributes\BsonIndexAttribute.cs" />
+    <Compile Include="Mapper\Attributes\BsonRefAttribute.cs" />
+    <Compile Include="Mapper\BsonMapper.cs" />
+    <Compile Include="Mapper\BsonMapper.Deserialize.cs" />
+    <Compile Include="Mapper\BsonMapper.Serialize.cs" />
+    <Compile Include="Mapper\EntityBuilder.cs" />
+    <Compile Include="Mapper\EntityMapper.cs" />
+    <Compile Include="Mapper\Linq\QueryLinq.cs" />
+    <Compile Include="Mapper\Linq\QueryVisitor.cs" />
+    <Compile Include="Mapper\MemberMapper.cs" />
+    <Compile Include="Mapper\Reflection\Reflection.cs" />
+    <Compile Include="Mapper\Reflection\Reflection.Expression.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\LiteQueryable.cs" />
+    <Compile Include="Repository\LiteRepository.cs" />
+    <Compile Include="Shell\Collections\BaseCollection.cs" />
+    <Compile Include="Shell\Collections\Bulk.cs" />
+    <Compile Include="Shell\Collections\Count.cs" />
+    <Compile Include="Shell\Collections\Delete.cs" />
+    <Compile Include="Shell\Collections\Drop.cs" />
+    <Compile Include="Shell\Collections\DropIndex.cs" />
+    <Compile Include="Shell\Collections\EnsureIndex.cs" />
+    <Compile Include="Shell\Collections\Find.cs" />
+    <Compile Include="Shell\Collections\Indexes.cs" />
+    <Compile Include="Shell\Collections\Insert.cs" />
+    <Compile Include="Shell\Collections\Max.cs" />
+    <Compile Include="Shell\Collections\Min.cs" />
+    <Compile Include="Shell\Collections\Rename.cs" />
+    <Compile Include="Shell\Collections\Select.cs" />
+    <Compile Include="Shell\Collections\Update.cs" />
+    <Compile Include="Shell\HelpAttribute.cs" />
+    <Compile Include="Shell\ICommand.cs" />
+    <Compile Include="Shell\Info.cs" />
+    <Compile Include="Shell\Storage\BaseStorage.cs" />
+    <Compile Include="Shell\Storage\Delete.cs" />
+    <Compile Include="Shell\Storage\Download.cs" />
+    <Compile Include="Shell\Storage\Find.cs" />
+    <Compile Include="Shell\Storage\Update.cs" />
+    <Compile Include="Shell\Storage\Upload.cs" />
+    <Compile Include="Storage\LiteFileInfo.cs" />
+    <Compile Include="Storage\LiteFileStream.cs" />
+    <Compile Include="Storage\LiteFileStream.Read.cs" />
+    <Compile Include="Storage\LiteFileStream.Write.cs" />
+    <Compile Include="Storage\LiteStorage.cs" />
+    <Compile Include="Upgrade\IDbReader.cs" />
+    <Compile Include="Upgrade\Upgrade.cs" />
+    <Compile Include="Upgrade\V6\DbReader.cs" />
+    <Compile Include="Upgrade\V6\Pages\BasePage.cs" />
+    <Compile Include="Upgrade\V6\Pages\CollectionPage.cs" />
+    <Compile Include="Upgrade\V6\Pages\DataPage.cs" />
+    <Compile Include="Upgrade\V6\Pages\ExtendPage.cs" />
+    <Compile Include="Upgrade\V6\Pages\HeaderPage.cs" />
+    <Compile Include="Upgrade\V6\Pages\IndexPage.cs" />
+    <Compile Include="Upgrade\V6\Services\CollectionService.cs" />
+    <Compile Include="Upgrade\V6\Services\DataService.cs" />
+    <Compile Include="Upgrade\V6\Services\FileDiskService.cs" />
+    <Compile Include="Upgrade\V6\Services\IndexService.cs" />
+    <Compile Include="Upgrade\V6\Services\PageService.cs" />
+    <Compile Include="Upgrade\V6\Structures\CollectionIndex.cs" />
+    <Compile Include="Upgrade\V6\Structures\DataBlock.cs" />
+    <Compile Include="Upgrade\V6\Structures\IndexNode.cs" />
+    <Compile Include="Utils\AesEncryption.cs" />
+    <Compile Include="Utils\ByteReader.cs" />
+    <Compile Include="Utils\ByteWriter.cs" />
+    <Compile Include="Utils\ConnectionString.cs" />
+    <Compile Include="Utils\Extensions\BinaryExtensions.cs" />
+    <Compile Include="Utils\Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="Utils\Extensions\DateExtensions.cs" />
+    <Compile Include="Utils\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Utils\Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Utils\Extensions\IOExceptionExtensions.cs" />
+    <Compile Include="Utils\Extensions\LinqExtensions.cs" />
+    <Compile Include="Utils\Extensions\StreamExtensions.cs" />
+    <Compile Include="Utils\Extensions\StringExtensions.cs" />
+    <Compile Include="Utils\Extensions\TypeInfoExtensions.cs" />
+    <Compile Include="Utils\Extensions\ZipExtensions.cs" />
+    <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\FileOptions.cs" />
+    <Compile Include="Utils\KeyDocument.cs" />
+    <Compile Include="Utils\LazyLoad.cs" />
+    <Compile Include="Utils\LiteException.cs" />
+    <Compile Include="Utils\LockControl.cs" />
+    <Compile Include="Utils\LockState.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Utils\MimeTypeConverter.cs" />
+    <Compile Include="Utils\StorageUnitHelper.cs" />
+    <Compile Include="Utils\StringScanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Linq\_demo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
