@@ -1,5 +1,0 @@
-C:\_CS\LiteDB\2.0\LiteDB\bin\Debug\LiteDB.dll
-C:\_CS\LiteDB\2.0\LiteDB\bin\Debug\LiteDB.pdb
-C:\_CS\LiteDB\2.0\LiteDB\obj\Debug\LiteDB.csproj.CoreCompileInputs.cache
-C:\_CS\LiteDB\2.0\LiteDB\obj\Debug\LiteDB.dll
-C:\_CS\LiteDB\2.0\LiteDB\obj\Debug\LiteDB.pdb
